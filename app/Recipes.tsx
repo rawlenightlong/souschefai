@@ -1,55 +1,78 @@
 'use client'
-import { openai } from "./components/openai";
 import { useState } from "react";
+import  Recipe  from './components/RecipeCard'
+import RecipeCard from "./components/RecipeCard";
 
+interface Recipe {
+  title: string;
+  servings: string;
+  ingredients: string[];
+  instructions: string[]
+}
 
+type Props = {
+  data: Recipe
+}
 
 const Recipes = () => {
 
   const [ingredients, setIngredients] = useState('')
-  const [numberOfIngredients, setNumberOfIngredients] = useState([1])
-  const [count, setCount] = useState(1)
-  const [recipe, setRecipe ] = useState('')
-  let ingredientList = {}
+  const [recipe, setRecipe ] = useState({    
+    title: "",
+    servings: "",
+    ingredients: [],
+    instructions: []
+  })
 
-  const main = async function main(e: React.FormEvent<HTMLFormElement>) {
+  const [ingredientList, setIngredientList] = useState('')
+  const [isLoading, setIsLoading] = useState(1)
+  
+
+  const getRecipe = async function getRecipe(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault()
-    const completion = await openai.chat.completions.create({
-      messages: [
-        {
-          role: "user",
-          content:
-            `give me a recipe with the following ingredients: ${ingredients}`,
-        },
-      ],
-      model: "gpt-3.5-turbo",
-    });
-    const data = completion.choices[0].message.content;
-  if (data){
-    setRecipe(data)
-    setIngredients('')
-  }
+    setIngredientList(ingredients)
+    setIsLoading(2)
+    const response = await fetch('/api/recipes', {
+      method: 'POST',
+      body: ingredients
+    })
+    const gptrecipe = await response.json()
+    const jsonrecipe = JSON.parse(gptrecipe)
+    if (jsonrecipe){
+      setIsLoading(3)
+      setRecipe({title: jsonrecipe.title,
+                servings: jsonrecipe.servings,
+                ingredients: jsonrecipe.ingredients,
+                instructions: jsonrecipe.instructions
+    })
+      setIngredients('')
+    }
   }
 
   return (
     <>
     <div>
-      <div>
 
-      </div>
-   
-      
-      <form onSubmit={main} >
+      <div>
+      <form onSubmit={getRecipe} >
         <input className=" bg-blue-600 text-black" type='text' placeholder='add your ingredients' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
-        {/* <button onClick={() => {
-          setCount(count+1)
-          }}>add an ingredient</button><br></br> */}
         <button type="submit">get recipes</button>
       </form>
+      </div>
 
-      <div>
-        {recipe}
-        </div>
+      {/* <div>
+        <h1>Ingredients List</h1>
+        {ingredientList}
+      </div> */}
+
+      {/* <div>
+        {isLoading===2 && !recipe ? "loading" : recipe}
+      </div> */}
+
+      {/* <RecipeCard title={recipe.title} servings={recipe.servings} ingredients={recipe.ingredients} instructions={recipe.instructions}/> */}
+      {isLoading===2 && recipe ? 'loading' : null}
+      {isLoading===3 && recipe ? <RecipeCard title={recipe.title} servings={recipe.servings} ingredients={recipe.ingredients} instructions={recipe.instructions}/> : null}
+
     </div>
     </>
   );

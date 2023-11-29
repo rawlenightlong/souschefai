@@ -1,18 +1,38 @@
-import { openai } from "@/app/components/openai";
-import OpenAI from "openai";
+import { OpenAI } from "openai";
+import { useState } from "react";
 
-export const POST = async function main(req: Request, res: Response) {
+const openai = new OpenAI({
+  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY
+});
+
+export const POST = async function getRecipe(req: Request, res: Response) {
+    const body = await req.text()
     const completion = await openai.chat.completions.create({
       messages: [
         {
           role: "user",
           content:
-            `give me a recipe with the following ingredients: chicken, soy sauce, rice, cabbage`,
+            `give me a recipe with the following ingredients: ${body} as a JSON object: 
+            {
+              
+                "title": '',
+                "servings": ''',
+                "ingredients": [
+                  "",
+                  "",
+                  ""
+                ],
+                "instructions": [
+                  "",
+                  "",
+                  "",
+                ]
+              
+            }`,
         },
       ],
       model: "gpt-3.5-turbo",
     });
     const data = completion.choices[0].message.content;
-    console.log(data)
-
+    return Response.json(data)
   }
