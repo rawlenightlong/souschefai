@@ -32,7 +32,7 @@ const Recipes = () => {
     e.preventDefault()
     setIngredientList(ingredients)
     setIsLoading(2)
-    const response = await fetch('souschefai.vercel.app/api/recipes', {
+    const response = await fetch('https://souschefai.vercel.app/api/recipes', {
       method: 'POST',
       body: ingredients
     })
