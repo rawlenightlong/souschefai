@@ -19,8 +19,8 @@ import { LuChefHat } from "react-icons/lu";
 
 
 
-const pages = ['My Recipes', 'Random'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Random Recipe', "Instagram", "Twitter"];
+const settings = ['Profile','My Recipes', 'Account', 'Dashboard', 'Logout'];
 
 const Nav = () => {
 
