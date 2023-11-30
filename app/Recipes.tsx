@@ -32,7 +32,7 @@ const Recipes = () => {
     e.preventDefault()
     setIngredientList(ingredients)
     setIsLoading(2)
-    const response = await fetch('https://souschefai.onrender.com/api/recipes', {
+    const response = await fetch('/api/recipes', {
       method: 'POST',
       body: ingredients
     })
