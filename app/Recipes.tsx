@@ -56,7 +56,7 @@ const Recipes = () => {
       <div>
       <form onSubmit={getRecipe} >
         <input className=" bg-blue-600 text-black" type='text' placeholder='add your ingredients' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
-        <button type="submit">get recipes</button>
+        <button type="submit">get recipe</button>
       </form>
       </div>
 
