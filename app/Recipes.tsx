@@ -57,12 +57,17 @@ const Recipes = () => {
         Welcome to Sous Chef AI, a simple, ChatGPT-powered recipe generator for all your adventurous, culinary needs! Simply enter a comma-separated list of what you&apos;ve got lying around in the fridge or at home, and get inspired!
       </div>
       <div>
-      <form onSubmit={getRecipe} >
+        <form onSubmit={getRecipe} >
 
-        <input className="text-black border-black border-2 w-6/12" type='text' placeholder='Add your ingredients here, separated by commas!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/><br></br>
-        {/* <button type="submit">get recipes</button><br></br> */}
-        <Button className="my-4" type="submit" variant="outlined">Get Recipe!</Button>
-      </form>
+          <div>
+            <input className="text-black border-black border-2 w-6/12" type='text' placeholder='Add your ingredients here, separated by commas!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
+          </div>
+        
+          <div className="my-3">
+            <Button type="submit" variant="outlined">Get Recipe!</Button>
+          </div>
+        
+        </form>
       </div>
 
       {/* <div>
