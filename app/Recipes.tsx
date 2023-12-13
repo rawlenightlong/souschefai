@@ -60,7 +60,7 @@ const Recipes = () => {
         <form onSubmit={getRecipe} >
 
           <div>
-            <input className="text-black border-black border-2 w-6/12" type='text' placeholder='Add your ingredients here, separated by commas!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
+            <input className="text-black border-black border-2 w-6/12" type='text' placeholder='  Add your ingredients here, separated by commas!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
           </div>
         
           <div className="my-3">
