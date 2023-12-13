@@ -61,7 +61,7 @@ const Recipes = () => {
 
         <input className="text-black border-black border-2 w-6/12" type='text' placeholder='Add your ingredients here, separated by commas!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/><br></br>
         {/* <button type="submit">get recipes</button><br></br> */}
-        <Button className="my-3" type="submit" variant="outlined">Get Recipe!</Button>
+        <Button className="my-4" type="submit" variant="outlined">Get Recipe!</Button>
       </form>
       </div>
 
