@@ -33,12 +33,13 @@ const Recipes = () => {
     e.preventDefault()
     setIngredientList(ingredients)
     setIsLoading(2)
-    const response = await fetch('/api/recipes', {
+    const response = await fetch('souschefai.onrender.com/api/recipes', {
       method: 'POST',
       body: ingredients
     })
     const gptrecipe = await response.json()
     const jsonrecipe = JSON.parse(gptrecipe)
+    console.log(jsonrecipe)
     if (jsonrecipe){
       setIsLoading(3)
       setRecipe({title: jsonrecipe.title,
@@ -52,7 +53,7 @@ const Recipes = () => {
 
   return (
     <>
-    <div className="h-[85vh] text-center w-8/12 items-center justify-center m-auto">
+    <div className="h-[85vh] text-center w-7/12 items-center justify-center m-auto">
       <div className=" mt-10 mb-16">
         Welcome to Sous Chef AI, a simple, ChatGPT-powered recipe generator for all your adventurous, culinary needs! Simply enter a comma-separated list of what you&apos;ve got lying around in the fridge or at home, and get inspired!
       </div>
@@ -60,7 +61,7 @@ const Recipes = () => {
         <form onSubmit={getRecipe} >
 
           <div>
-            <input className="text-black border-black border-2 w-6/12" type='text' placeholder='  Add your ingredients here, separated by commas!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
+            <input className="text-black border-black border-2 w-6/12 px-2" type='text' placeholder='Add your ingredients here, separated by commas!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
           </div>
         
           <div className="my-3">

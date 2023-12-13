@@ -11,17 +11,19 @@ const RecipeCard: React.FC<RecipeProps> = (recipe: RecipeProps) => {
 
   return (
     <div className='p-10'>
+
         <div className="mb-4">
-            <h1>Recipe Name</h1>
-            <h3>{recipe.title}</h3>
+            <p>{recipe.title}</p>
             <h4>Serves: {recipe.servings}</h4>
         </div>
 
-
-        <div>
+        <div className='text-left'>
             <h1 className="mb-2">Instructions</h1>
             <ul>
-                {recipe.instructions?.map((instruction: string, index: number) => <li key={index}>{index + 1}. {instruction}</li>)}
+                {recipe.instructions?.map((instruction: string, index: number) => 
+                <li key={index} className='py-2'>
+                  <p>{instruction}</p>
+                </li>)}
             </ul>
         </div>
 

@@ -23,9 +23,9 @@ export const POST = async function getRecipe(req: Request, res: Response) {
                   ""
                 ],
                 "instructions": [
-                  "",
-                  "",
-                  "",
+                  1. "",
+                  2. "",
+                  3. "",
                 ]
               
             }`,
