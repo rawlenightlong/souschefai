@@ -8,7 +8,7 @@ export default function Home() {
     <main>
       <Nav/>
       <Recipes />
-      <Footer/>
+      {/* <Footer/> */}
     </main>
   );
 }

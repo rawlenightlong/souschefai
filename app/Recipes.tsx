@@ -53,15 +53,16 @@ const Recipes = () => {
 
   return (
     <>
-    <div className="h-[85vh] text-center w-7/12 items-center justify-center m-auto">
-      <div className=" mt-10 mb-16">
-        Welcome to Sous Chef AI, a simple, ChatGPT-powered recipe generator for all your adventurous, culinary needs! Simply enter a comma-separated list of what you&apos;ve got lying around in the fridge or at home, and get inspired!
+    <div className="h-[85vh] text-center w-[90vw] items-center justify-center m-auto">
+      <div className=" mt-10 mb-10 text-sm">
+        Welcome to Sous Chef AI, a simple, ChatGPT-powered recipe generator for all your culinary needs! 
+        Enter a comma-separated list of what you&apos;ve got lying around at home, and get inspired!
       </div>
       <div>
         <form onSubmit={getRecipe} >
 
           <div>
-            <input className="text-black border-black border-2 w-6/12 px-2" type='text' placeholder='Add your ingredients here, separated by commas!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
+            <input className="text-black border-black border-2 w-[75vw] text-center rounded-md" type='text' placeholder='Add your ingredients here!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
           </div>
         
           <div className="my-3">

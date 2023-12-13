@@ -16,16 +16,16 @@ export const POST = async function getRecipe(req: Request, res: Response) {
             {
               
                 "title": '',
-                "servings": ''',
+                "servings": '',
                 "ingredients": [
                   "",
                   "",
                   ""
                 ],
                 "instructions": [
-                  1. "",
-                  2. "",
-                  3. "",
+                  "1. ",
+                  "2. ",
+                  "3. ",
                 ]
               
             }`,

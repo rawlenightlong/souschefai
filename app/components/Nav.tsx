@@ -64,7 +64,7 @@ const Nav = () => {
                 textDecoration: 'none',
               }}
             >
-              Sous Chef AI
+              Sous Chef
             </Typography>
   
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -103,9 +103,9 @@ const Nav = () => {
                 ))}
               </Menu>
             </Box>
-            <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+
             <Typography
-              variant="h5"
+              variant="subtitle1"
               noWrap
               component="a"
               href="#app-bar-with-responsive-menu"
@@ -120,7 +120,7 @@ const Nav = () => {
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              Sous Chef
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (

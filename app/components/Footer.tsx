@@ -1,8 +1,11 @@
 import React from 'react'
 
+
 const Footer = () => {
   return (
-    <div className='text-center'>Copyright Rawle Night Long</div>
+    <footer className='text-center bg-blue-500 text-white bottom-0 static' >
+      Copyright @ 2024 Rawle Night Long
+      </footer>
   )
 }
 
