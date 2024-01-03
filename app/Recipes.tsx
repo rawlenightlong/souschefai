@@ -53,7 +53,7 @@ const Recipes = () => {
 
   return (
     <>
-    <div className="h-[85vh] text-center w-[90vw] items-center justify-center m-auto">
+    <div className="h-[100vh] text-center w-[90vw] items-center justify-center m-auto">
       <div className=" mt-10 mb-10 text-sm">
         Welcome to Sous Chef AI, a simple, ChatGPT-powered recipe generator for all your culinary needs! 
         Enter a comma-separated list of what you&apos;ve got lying around at home, and get inspired!

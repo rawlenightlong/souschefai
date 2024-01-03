@@ -10,7 +10,7 @@ export type RecipeProps = {
 
 const RecipeCard: React.FC<RecipeProps> = (recipe: RecipeProps) => {
   return (
-    <div className="p-6 rounded-xl bg-orange-300 drop-shadow-lg">
+    <div className="p-6 rounded-xl bg-orange-300 drop-shadow-lg mb-2 ">
       <div className="mb-4">
         <Typography variant="h6">
           <p>{recipe.title}</p>
