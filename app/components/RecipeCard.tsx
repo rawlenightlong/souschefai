@@ -12,17 +12,19 @@ const RecipeCard: React.FC<RecipeProps> = (recipe: RecipeProps) => {
   return (
     <div className="p-6 rounded-xl bg-orange-300 drop-shadow-lg">
       <div className="mb-4">
-        <Typography variant="h6"><p>{recipe.title}</p></Typography>
-        <Typography variant='subtitle1'><h4>Serves: {recipe.servings}</h4></Typography>
+        <Typography variant="h6">
+          <p>{recipe.title}</p>
+        </Typography>
+        <Typography variant="subtitle1">
+          <h4>Serves: {recipe.servings}</h4>
+        </Typography>
         <Typography variant="subtitle1">
           <ul>
             {recipe.ingredients?.map((ingredient: string, index: number) => (
-            <li key={index}>
-              {ingredient}
-            </li>))}
+              <li key={index}>{ingredient}</li>
+            ))}
           </ul>
         </Typography>
-
       </div>
 
       <h1 className="mb-2">Instructions</h1>
@@ -38,9 +40,12 @@ const RecipeCard: React.FC<RecipeProps> = (recipe: RecipeProps) => {
       </div>
 
       <div>
-        {recipe ? <div className='mt-4'><Button variant="outlined">Save This Recipe</Button></div> :  null}
+        {recipe ? (
+          <div className="mt-4">
+            <Button variant="outlined">Save This Recipe</Button>
+          </div>
+        ) : null}
       </div>
-
     </div>
   );
 };
