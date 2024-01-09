@@ -53,8 +53,8 @@ const Recipes = () => {
 
   return (
     <>
-    <div className="h-[85vh] text-center w-[90vw] items-center justify-center m-auto">
-      <div className=" mt-10 mb-10 text-sm border border-black rounded-md p-2 bg-gray-200/60">
+    <div className="h-dvh text-center w-[90vw] items-center justify-center m-auto">
+      <div className=" mt-10 mb-10 text-sm border border-black rounded-md p-2 bg-[#1976d2] text-white">
         Welcome to Sous Chef AI, a simple, ChatGPT-powered recipe generator for all your culinary needs! 
         Enter a comma-separated list of what you&apos;ve got lying around at home, and get inspired!
       </div>
@@ -62,11 +62,11 @@ const Recipes = () => {
         <form onSubmit={getRecipe} >
 
           <div>
-            <input className="text-black border-black border-2 w-[75vw] text-center rounded-md" type='text' placeholder='Add your ingredients here!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
+            <input className="text-black  w-[75vw] text-center rounded-md" type='text' placeholder='Add your ingredients here!' value={ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
           </div>
         
           <div className="my-3">
-            <Button type="submit" variant="outlined">Get Recipe!</Button>
+            <Button type="submit" variant="outlined" style={{backgroundColor: "#1976d2", color: "white"}}>Get Recipe!</Button>
           </div>
         
         </form>
@@ -82,7 +82,7 @@ const Recipes = () => {
       </div> */}
 
       {/* <RecipeCard title={recipe.title} servings={recipe.servings} ingredients={recipe.ingredients} instructions={recipe.instructions}/> */}
-      {isLoading===2 && recipe ? 'loading' : null}
+      {isLoading===2 && recipe ? <div className="text-white">loading </div> : null}
       {isLoading===3 && recipe ? <RecipeCard title={recipe.title} servings={recipe.servings} ingredients={recipe.ingredients} instructions={recipe.instructions}/> : null}
 
     </div>

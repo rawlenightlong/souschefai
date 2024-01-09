@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Typography } from "@mui/material";
 
+
 export type RecipeProps = {
   title: string;
   servings: string;
@@ -8,26 +9,29 @@ export type RecipeProps = {
   instructions: string[];
 };
 
+
+
 const RecipeCard: React.FC<RecipeProps> = (recipe: RecipeProps) => {
   return (
-    <div className="p-6 rounded-xl bg-orange-400 drop-shadow-lg mb-2 border-4 border-black">
-      <div className="">
-        <Typography variant="h6">
-          <p>{recipe.title}</p>
+    <div className="p-6 rounded-xl bg-[#1976d2] overflow-scroll h-[60vh] text-white">
+      <div className=" mb-4">
+        <Typography variant="h5">
+          <p className="italic mb-2">{recipe.title}</p>
         </Typography>
         <Typography variant="subtitle1">
-          <h4>Serves: {recipe.servings}</h4>
+          Serves: {recipe.servings}
         </Typography>
-        <Typography variant="subtitle1">
+        <Typography variant="subtitle2">
           <ul>
             {recipe.ingredients?.map((ingredient: string, index: number) => (
-              <li key={index}>{ingredient}</li>
+              <li key={index}>~ {ingredient}</li>
             ))}
           </ul>
+          {/* {recipe.ingredients?.join(", ")} */}
         </Typography>
       </div>
 
-      <h1 className="mb-2">Instructions</h1>
+      <h3 className="mb-2 underline italic">Instructions</h3>
 
       <div className="text-left">
         <ul>
@@ -42,7 +46,12 @@ const RecipeCard: React.FC<RecipeProps> = (recipe: RecipeProps) => {
       <div>
         {recipe ? (
           <div className="mt-4">
-            <Button variant="outlined">Save This Recipe</Button>
+            <Button variant="contained" sx={{"&:hover": {backgroundColor: "white", color: "#1976d2"}}}  style={{
+              backgroundColor: "#1976d2",
+               color: "white", 
+               borderColor: "white",
+               }}>Save This Recipe!</Button>
+               
           </div>
         ) : null}
       </div>

@@ -12,7 +12,7 @@ export const POST = async function getRecipe(req: Request, res: Response) {
         {
           role: "user",
           content:
-            `give me a recipe with the following ingredients: ${body} as a JSON object: 
+            `find and give me a thoroughly detailed recipe containing the following ingredients: ${body} as a JSON object: 
             {
               
                 "title": '',
