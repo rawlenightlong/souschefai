@@ -47,8 +47,8 @@ const Nav = () => {
         <Container maxWidth={false}>
           <Toolbar disableGutters>
             {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-            <LuChefHat size={50}/>
-            <Typography
+            <LuChefHat size={40}/>
+            {/* <Typography
               variant="h6"
               className="p-4"
               noWrap
@@ -65,9 +65,9 @@ const Nav = () => {
               }}
             >
               Sous Chef
-            </Typography>
+            </Typography> */}
   
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -102,27 +102,27 @@ const Nav = () => {
                   </MenuItem>
                 ))}
               </Menu>
-            </Box>
+            </Box> */}
 
             <Typography
               variant="subtitle1"
               noWrap
               component="a"
-              href="#app-bar-with-responsive-menu"
+              href="/"
               sx={{
-                mr: 2,
+                ml: 2,
                 display: { xs: 'flex', md: 'none' },
                 flexGrow: 1,
                 fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
+                fontWeight: 800,
+                letterSpacing: '.2rem',
                 color: 'inherit',
                 textDecoration: 'none',
               }}
             >
-              Sous Chef
+              SousChef
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
                 <Button
                   key={page}
@@ -132,9 +132,9 @@ const Nav = () => {
                   {page}
                 </Button>
               ))}
-            </Box>
+            </Box> */}
   
-            <Box sx={{ flexGrow: 0 }}>
+            {/* <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -162,7 +162,7 @@ const Nav = () => {
                   </MenuItem>
                 ))}
               </Menu>
-            </Box>
+            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
