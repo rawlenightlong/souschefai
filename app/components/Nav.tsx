@@ -43,11 +43,11 @@ const Nav = () => {
     };
   
     return (
-      <AppBar position="static" style={{background: ''}}>
+      <AppBar position="static" style={{background: '', justifyContent: "space-between"}}>
         <Container maxWidth={false}>
           <Toolbar disableGutters>
             {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-            <LuChefHat size={40}/>
+            <LuChefHat size={30}/>
             {/* <Typography
               variant="h6"
               className="p-4"
@@ -103,7 +103,6 @@ const Nav = () => {
                 ))}
               </Menu>
             </Box> */}
-
             <Typography
               variant="subtitle1"
               noWrap
