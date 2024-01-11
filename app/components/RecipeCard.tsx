@@ -13,7 +13,7 @@ export type RecipeProps = {
 
 const RecipeCard: React.FC<RecipeProps> = (recipe: RecipeProps) => {
   return (
-    <div className="p-6 rounded-xl bg-[#1976d2] overflow-scroll h-[60vh] text-white">
+    <div className="p-6 rounded-xl bg-[#1976d2] overflow-scroll h-[60vh] text-white no-scrollbar" >
       <div className=" mb-4">
         <Typography variant="h5">
           <p className="italic mb-2">{recipe.title}</p>

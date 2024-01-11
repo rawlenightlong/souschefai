@@ -48,7 +48,7 @@ const Nav = () => {
           <Toolbar disableGutters>
             {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
             <LuChefHat size={30}/>
-            {/* <Typography
+            <Typography
               variant="h6"
               className="p-4"
               noWrap
@@ -65,7 +65,7 @@ const Nav = () => {
               }}
             >
               Sous Chef
-            </Typography> */}
+            </Typography>
   
             {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
